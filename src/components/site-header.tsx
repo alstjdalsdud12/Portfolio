@@ -4,7 +4,14 @@ import Link from "next/link";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { navItems } from "@/lib/projects";
+import { profile } from "@/lib/projects";
+
+const navItems = [
+  { href: "/#projects", label: "프로젝트" },
+  { href: "/#stack", label: "스택" },
+  { href: "/#about", label: "소개" },
+  { href: "/#contact", label: "연락" },
+];
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
@@ -13,7 +20,7 @@ export function SiteHeader() {
     <header className="sticky top-0 z-20 border-b border-border bg-background/95 backdrop-blur-sm">
       <div className="mx-auto flex h-14 w-full max-w-6xl items-center justify-between px-5 sm:px-8">
         <Link href="/" className="text-sm font-medium">
-          풀스택 포트폴리오
+          {profile.name}
         </Link>
         <nav aria-label="섹션" className="hidden items-center gap-5 lg:flex">
           {navItems.map((item) => (
@@ -38,19 +45,11 @@ export function SiteHeader() {
         </Button>
       </div>
       {open ? (
-        <nav
-          id="mobile-nav"
-          aria-label="섹션"
-          className="border-t border-border px-5 py-3 lg:hidden"
-        >
+        <nav id="mobile-nav" aria-label="섹션" className="border-t border-border px-5 py-3 lg:hidden">
           <ul className="flex flex-col">
             {navItems.map((item) => (
               <li key={item.href}>
-                <Link
-                  href={item.href}
-                  className="block py-3 text-sm"
-                  onClick={() => setOpen(false)}
-                >
+                <Link href={item.href} className="block py-3 text-sm" onClick={() => setOpen(false)}>
                   {item.label}
                 </Link>
               </li>

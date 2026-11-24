@@ -17,9 +17,9 @@ const mono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "풀스택 포트폴리오",
+  title: "최민영 · 풀스택 포트폴리오",
   description:
-    "gmg, RE_cook, vibe-coding-project로 들어가는 풀스택 개발자 포트폴리오.",
+    "최민영의 풀스택 포트폴리오. 가면가, 곁, AI 캐릭터 게임에서 맡은 화면과 서버를 적습니다.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
